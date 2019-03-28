@@ -71,7 +71,7 @@
 
 	<div class="main-wrapper">
 			<div>
-				<img src="git_1.png" alt="" id="slideimg">
+				<img src="git_1.PNG" alt="" id="slideimg">
 				<div id="back">0</div>
 				<div id="front">0</div>
 			</div>
@@ -108,14 +108,14 @@
 				document.getElementById('button_2').textContent = ' ';
 			}
 			else {
-				document.getElementById('slideimg').src = 'git_' + (pageNum + 1) + '.png';
+				document.getElementById('slideimg').src = 'git_' + (pageNum + 1) + '.PNG';
 				pageNum++;
 				document.getElementById('nowpage').textContent = pageNum;
 				document.getElementById('button_1').textContent = '<';
 			}
 		};
 		thumbs_2.onclick = function() {
-			document.getElementById('slideimg').src = 'git_' + (pageNum + 1) + '.png';
+			document.getElementById('slideimg').src = 'git_' + (pageNum + 1) + '.PNG';
 			pageNum++;
 			document.getElementById('nowpage').textContent = pageNum;
 			document.getElementById('button_1').textContent = '<';
@@ -128,14 +128,14 @@
 				document.getElementById('button_1').textContent = ' ';
 			}
 			else {
-				document.getElementById('slideimg').src = 'git_' + (pageNum - 1) + '.png';
+				document.getElementById('slideimg').src = 'git_' + (pageNum - 1) + '.PNG';
 				pageNum--;
 				document.getElementById('nowpage').textContent = pageNum;
 				document.getElementById('button_2').textContent = '>';
 			}
 		};
 		thumbs_1.onclick = function() {
-			document.getElementById('slideimg').src = 'git_' + (pageNum - 1) + '.png';
+			document.getElementById('slideimg').src = 'git_' + (pageNum - 1) + '.PNG';
 			pageNum--;
 			document.getElementById('nowpage').textContent = pageNum;
 			if (pageNum === 1) {
