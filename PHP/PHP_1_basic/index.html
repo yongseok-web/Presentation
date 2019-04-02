@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta content="IE=edge">
+	<title>GitHub 이해하기</title>
+	<style media="screen">
+		.main-wrapper div img {
+			width: 100%;
+		}
+		.main-wrapper div {
+			margin: 0 auto;
+			width: 100%;
+			background-color: black;
+			text-align: center;
+			position: relative;
+		}
+		.main-wrapper div span {
+			color: #ffffff;
+		  font-size: 2em;
+		}
+		#nowpage {
+			width: 10%;
+		}
+		.toolbar {
+			overflow: hidden;
+			text-align: center;
+		}
+		.nav {
+			display: inline-block;
+		}
+		#back{
+			display: inline-block;
+			width: 50%;
+			margin: 0;
+			padding: 0;
+			background-color: red;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			opacity: 0;
+		}
+		#front{
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			background-color: blue;
+			height: 100%;
+			width: 50%;
+			position: absolute;
+			top:00%;
+			left:50%;
+			opacity: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="header-contents">
+		</div><!-- /.header-contents -->
+	</header>
+
+	<div class="main-wrapper">
+			<div>
+				<img src="1.PNG" alt="" id="slideimg">
+				<div id="back">0</div>
+				<div id="front">0</div>
+			</div>
+			<div class="toolbar">
+				<span><a id="button_1">
+						< </a>
+			  </span>
+				<span id="nowpage"> 1 </span>
+				<span><a id="button_2">
+						>
+					</a>
+				</span>
+			</div>
+	</div><!-- /.main-wrapper -->
+
+	<footer>
+		<h1>PHP 기본문법</h1>
+		<h2>2019.04.02. 작성됨</h2>
+	</footer>
+
+	<script type="text/javascript">
+		var pageNum = 1;
+		var lastpageNum = 16;
+		var slideimg = document.getElementById('slideimg');
+		var back = document.querySelector('#back');
+		var front = document.getElementById('front');
+		var thumbs_1 = document.querySelector('#button_1');
+		var thumbs_2 = document.querySelector('#button_2');
+		front.onclick = function() {
+			if (pageNum === lastpageNum) {
+				document.getElementById('button_2').textContent = ' ';
+			}
+			else {
+				document.getElementById('slideimg').src = (pageNum + 1) + '.PNG';
+				pageNum++;
+				document.getElementById('nowpage').textContent = pageNum;
+				document.getElementById('button_1').textContent = '<';
+				imagePreload( (pageNum + 2) + '.PNG' );
+			}
+		};
+		thumbs_2.onclick = function() {
+			document.getElementById('slideimg').src = (pageNum + 1) + '.PNG';
+			pageNum++;
+			document.getElementById('nowpage').textContent = pageNum;
+			document.getElementById('button_1').textContent = '<';			
+			imagePreload( (pageNum + 2) + '.PNG' );
+			if (pageNum === lastpageNum) {
+				document.getElementById('button_2').textContent = ' ';
+			}
+		};
+		back.onclick = function() {
+			if (pageNum === 1) {
+				document.getElementById('button_1').textContent = ' ';
+			}
+			else {
+				document.getElementById('slideimg').src = (pageNum - 1) + '.PNG';
+				pageNum--;
+				document.getElementById('nowpage').textContent = pageNum;
+				document.getElementById('button_2').textContent = '>';
+			}
+		};
+		thumbs_1.onclick = function() {
+			document.getElementById('slideimg').src = (pageNum - 1) + '.PNG';
+			pageNum--;
+			document.getElementById('nowpage').textContent = pageNum;
+			if (pageNum === 1) {
+				document.getElementById('button_1').textContent = ' ';
+			}
+			document.getElementById('button_2').textContent = '>';
+		}
+		if (pageNum === 1) {
+			document.getElementById('button_1').textContent = ' ';
+		}
+	</script>
+</body>
+</html>
