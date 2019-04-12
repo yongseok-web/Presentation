@@ -101,15 +101,15 @@
 		var thumbs_2 = document.querySelector('#button_2');
 		
 		front.onclick = function() {
-			if (pageNum === lastpageNum) {
-				document.getElementById('button_2').textContent = ' ';
-			}
-			else {
+			
+			
 				document.getElementById('slideimg').src = (pageNum + 1) + '.PNG';
 				document.getElementById('slideimgNext').src = (pageNum + 2) + '.PNG';
 				pageNum++;
 				document.getElementById('nowpage').textContent = pageNum;
 				document.getElementById('button_1').textContent = '<';
+			if (pageNum === lastpageNum) {
+				document.getElementById('button_2').textContent = ' ';
 			}
 		};
 		thumbs_2.onclick = function() {
