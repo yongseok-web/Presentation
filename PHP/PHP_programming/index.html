@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta content="IE=edge">
-	<title>PHP 기본문법</title>
+	<title>PHP 프로그래밍 기초</title>
 	<style media="screen">
 		.main-wrapper div img {
 			width: 100%;
@@ -55,6 +55,9 @@
 			left:50%;
 			opacity: 0;
 		}
+		#slideimgNext{
+			width: 1px;
+		}
 	</style>
 </head>
 
@@ -80,11 +83,13 @@
 					</a>
 				</span>
 			</div>
+			<img src="2.PNG" alt="" id="slideimgNext">
 	</div><!-- /.main-wrapper -->
 
 	<footer>
-		<h1>PHP 기본문법</h1>
+		<h1>PHP 프로그래밍 기초</h1>
 		<h2>2019.04.02. 작성됨</h2>
+		*2019.04.13. 제목/일부태그 수정
 	</footer>
 
 	<script type="text/javascript">
@@ -101,6 +106,7 @@
 			}
 			else {
 				document.getElementById('slideimg').src = (pageNum + 1) + '.PNG';
+				document.getElementById('slideimgNext').src = (pageNum + 2) + '.PNG';
 				pageNum++;
 				document.getElementById('nowpage').textContent = pageNum;
 				document.getElementById('button_1').textContent = '<';
@@ -109,9 +115,10 @@
 		};
 		thumbs_2.onclick = function() {
 			document.getElementById('slideimg').src = (pageNum + 1) + '.PNG';
+			document.getElementById('slideimgNext').src = (pageNum + 2) + '.PNG';
 			pageNum++;
 			document.getElementById('nowpage').textContent = pageNum;
-			document.getElementById('button_1').textContent = '<';			
+			document.getElementById('button_1').textContent = '<';
 			imagePreload( (pageNum + 2) + '.PNG' );
 			if (pageNum === lastpageNum) {
 				document.getElementById('button_2').textContent = ' ';
