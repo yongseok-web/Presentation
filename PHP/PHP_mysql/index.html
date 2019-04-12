@@ -99,6 +99,7 @@
 		var front = document.getElementById('front');
 		var thumbs_1 = document.querySelector('#button_1');
 		var thumbs_2 = document.querySelector('#button_2');
+		
 		front.onclick = function() {
 			if (pageNum === lastpageNum) {
 				document.getElementById('button_2').textContent = ' ';
@@ -109,7 +110,6 @@
 				pageNum++;
 				document.getElementById('nowpage').textContent = pageNum;
 				document.getElementById('button_1').textContent = '<';
-				imagePreload( (pageNum + 2) + '.PNG' );
 			}
 		};
 		thumbs_2.onclick = function() {
@@ -119,7 +119,6 @@
 			pageNum++;
 			document.getElementById('nowpage').textContent = pageNum;
 			document.getElementById('button_1').textContent = '<';
-			imagePreload( (pageNum + 2) + '.PNG' );
 			if (pageNum === lastpageNum) {
 				document.getElementById('button_2').textContent = ' ';
 			}
